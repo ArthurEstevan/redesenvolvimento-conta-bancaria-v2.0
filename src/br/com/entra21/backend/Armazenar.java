@@ -25,7 +25,7 @@ public interface Armazenar {
         empresas.put("001", empresa);
     }
     public static void inicializarFuncionarios() {
-        Funcionario funcionario = new Funcionario("Admin", (byte) 33, "001");
+        Funcionario funcionario = new Funcionario("Admin", (byte) 33, "001", "001");
         funcionarios.put("001", funcionario);
     }
 }

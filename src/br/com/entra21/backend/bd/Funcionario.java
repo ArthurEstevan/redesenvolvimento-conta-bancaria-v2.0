@@ -4,6 +4,10 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 public class Funcionario extends Pessoa {
 
+    // =========================== ATRIBUTOS =========================== //
+    private String senha;
+    // =========================== ATRIBUTOS =========================== //
+
     // =========================== CONSTRUTORES =========================== //
     public Funcionario() {
     }
@@ -13,11 +17,22 @@ public class Funcionario extends Pessoa {
     public Funcionario(String nome, byte idade) {
         super(nome, idade);
     }
-    public Funcionario(String nome, byte idade, String cpf) {
+    public Funcionario(String nome, byte idade, String cpf, String senha) {
         super(nome, idade, cpf);
+        this.senha = senha;
     }
     public Funcionario(String nome, byte idade, String cpf, String rg, LocalDate dataNascimento, String sexo, String mae, String pai, String cep, String endereco, String numero, String bairro, String cidade, String estado, String celular, String email, ArrayList<String> reclamacoes, LocalDate dataCadastro, LocalDate dataAtualizacao) {
         super(nome, idade, cpf, rg, dataNascimento, sexo, mae, pai, cep, endereco, numero, bairro, cidade, estado, celular, email, reclamacoes, dataCadastro, dataAtualizacao);
     }
     // =========================== CONSTRUTORES =========================== //
+
+    // =========================== GETTER end SETTER =========================== //
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+    // =========================== GETTER end SETTER =========================== //
 }

@@ -1,5 +1,8 @@
 package br.com.entra21.backend;
 
+import br.com.entra21.backend.menu.Chamadas;
+
+import java.awt.*;
 import java.time.LocalDate;
 import java.util.*;
 
@@ -8,6 +11,7 @@ public class Main {
 
     public static void main(String[] args) {
 
+        final byte TENTATIVA = 3;
         final byte ZERO = 0;
         byte opcao;
         Armazenar.inicializarBancoDados();
@@ -26,12 +30,16 @@ public class Main {
                     System.out.println("Espero que tenha tido uma ótima experiência.");
                     break;
                 case 1:
+                    Chamadas.entrar(TENTATIVA);
                     break;
                 case 2:
+                    // Chamadas.cadastrar(TENTATIVA);
                     break;
                 case 3:
+                    // Chamadas.alterarSenha(TENTATIVA);
                     break;
                 case 4:
+                    // Chamadas.sobre();
                     break;
                 default:
                     System.out.println("Desculpe a informção está incorreta.");
@@ -39,7 +47,6 @@ public class Main {
             }
         } while (opcao != 0);
     }
-
     public static void menu() {
         System.out.println("");
         LocalDate amostra = LocalDate.now();
