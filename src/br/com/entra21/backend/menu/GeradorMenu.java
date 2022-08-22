@@ -10,7 +10,7 @@ public class GeradorMenu {
     private ArrayList<String> opcoes;
     private String titulo;
 
-    public GeradorMenu(Scanner input, ArrayList<String> opcoes, String titulo) {
+    public GeradorMenu(ArrayList<String> opcoes, String titulo) {
         super();
         this.input = new Scanner(System.in);
         this.opcoes = opcoes;

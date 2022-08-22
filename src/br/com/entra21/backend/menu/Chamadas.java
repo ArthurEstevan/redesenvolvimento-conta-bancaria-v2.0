@@ -9,10 +9,10 @@ import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class Chamadas {
-
     static Scanner input = new Scanner(System.in);
     public static Funcionario funcionarioLogado = null;
 
+    // =========================== Entrar =========================== //
     public static void entrar(byte tentativa) {
         if (tentativa == 0) {
             System.out.println("Desculpe a informção está incorreta.");
@@ -24,7 +24,6 @@ public class Chamadas {
         }
 
         try {
-
             System.out.print("Informe o cpf do funcionario: ");
             Funcionario funcionario = Armazenar.funcionarios.get(input.next().trim());
 
@@ -40,7 +39,7 @@ public class Chamadas {
 
         } catch (NullPointerException e) {
             System.out.println("Nenhum funcionario cadastrado com este cpf");
-            entrar(tentativa--);
+            entrar(--tentativa);
             return;
         } catch (SenhaIncorretaException e) {
             System.out.println(e.getMessage());
@@ -54,7 +53,7 @@ public class Chamadas {
         } else {
             definirFuncionarioLogado(funcionario);
 
-            System.out.println("VERDADE");
+            // MENU FUNCIONARIO
         }
     }
     private static void definirFuncionarioLogado(Funcionario funcionario) {
@@ -70,4 +69,9 @@ public class Chamadas {
         funcionario.setSenha(input.next());
         verificarSenha(funcionario);
     }
+    // =========================== Entrar =========================== //
+
+    // =========================== Cadastrar =========================== //
+
+
 }
