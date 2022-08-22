@@ -58,6 +58,9 @@ public class GeradorMenu {
     public String getTitulo() {
         return titulo;
     }
+    public void setInput(Scanner input) {
+        this.input = input;
+    }
 }
 
 

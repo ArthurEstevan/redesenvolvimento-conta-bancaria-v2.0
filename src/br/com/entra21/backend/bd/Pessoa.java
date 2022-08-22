@@ -294,7 +294,7 @@ public class Pessoa {
 
                         "| " + "Celular: " + celular + "   " + "Email: " + email + '\n' +
 
-                        "| " + "Conta-Corente: " + contaCorente + "   " + "Agência: " + agencia + "   " + "Data de cadastro=" + dataCadastro + '\n' +
+                        "| " + "Conta-Corente: " + contaCorente + "   " + "Agência: " + agencia + "   " + "Data de cadastro: " + dataCadastro + '\n' +
 
                         "| " + "Reclamacoes=" + reclamacoes + '\n' +
 

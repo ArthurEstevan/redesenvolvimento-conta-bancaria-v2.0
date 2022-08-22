@@ -19,6 +19,9 @@ public interface Armazenar {
     }
     public static void inicializarClientes() {
         clientes.put("001", cliente);
+        clientes.put("002", new Cliente("Emilly Rafaela Lopes", (byte) 51, "002"));
+        clientes.put("003", new Cliente("Cláudia Lorena Maitê de Paula", (byte) 61, "003"));
+        clientes.put("004", new Cliente("Diogo André Gonçalves", (byte) 36, "004"));
     }
     public static void inicializarEmpresas() {
         Empresa empresa = new Empresa( cliente,"Ricardo Gráfica ME","96.448.737/0001-40");
