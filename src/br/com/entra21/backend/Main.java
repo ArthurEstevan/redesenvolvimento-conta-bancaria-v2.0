@@ -1,22 +1,18 @@
+package br.com.entra21.backend;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.InputMismatchException;
-import java.util.Scanner;
+import java.time.LocalDate;
+import java.util.*;
 
 public class Main {
-
     static Scanner input = new Scanner(System.in);
 
     public static void main(String[] args) {
 
         final byte ZERO = 0;
         byte opcao;
-
+        Armazenar.inicializarBancoDados();
 
         do {
-
             menu();
             try {
                 opcao = input.nextByte();
@@ -26,7 +22,6 @@ public class Main {
             }
 
             switch (opcao) {
-
                 case ZERO:
                     System.out.println("Espero que tenha tido uma ótima experiência.");
                     break;
@@ -46,14 +41,13 @@ public class Main {
     }
 
     public static void menu() {
-
-        ArrayList<String> opcao = new ArrayList<String>(Arrays.asList("1) Entrar", "2) Cadastrar", "3) Alterar senha", "4) Sobre"));
-
-        if (opcao != null || opcao.isEmpty()) {
-
-            opcao.forEach(System.out::println);
-            System.out.println("==========================================");
-            System.out.print("selecionei uma opcão: ");
-        }
+        System.out.println("");
+        LocalDate amostra = LocalDate.now();
+        System.out.println("Bem vindo - " + amostra);
+        System.out.println("==========================================");
+        ArrayList<String> opcao = new ArrayList<String>(Arrays.asList("0) Sair","1) Entrar", "2) Cadastrar", "3) Alterar senha", "4) Sobre"));
+        opcao.forEach(System.out::println);
+        System.out.println("==========================================");
+        System.out.print("selecione uma opcão: ");
     }
 }
