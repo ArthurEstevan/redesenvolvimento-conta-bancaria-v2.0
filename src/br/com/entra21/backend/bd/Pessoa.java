@@ -2,6 +2,7 @@ package br.com.entra21.backend.bd;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+
 public class Pessoa {
 
     // =========================== ATRIBUTOS =========================== //
@@ -33,17 +34,20 @@ public class Pessoa {
     public Pessoa() {
         super();
     }
+
     public Pessoa(String nome) {
         super();
         this.nome = nome;
         this.dataCadastro = LocalDate.now();
     }
+
     public Pessoa(String nome, byte idade) {
         super();
         this.nome = nome;
         this.idade = idade;
         this.dataCadastro = LocalDate.now();
     }
+
     public Pessoa(String nome, byte idade, String cpf) {
         super();
         this.nome = nome;
@@ -187,7 +191,6 @@ public class Pessoa {
     public LocalDate getDataAtualizacao() {
         return dataAtualizacao;
     }
-
     // =========================== GETTER =========================== //
 
     // =========================== SETTER =========================== //
@@ -274,6 +277,31 @@ public class Pessoa {
     public void setDataAtualizacao(LocalDate dataAtualizacao) {
         this.dataAtualizacao = dataAtualizacao;
     }
-
     // =========================== SETTER =========================== //
+
+    // =========================== toString =========================== //
+
+    @Override
+    public String toString() {
+        return
+                '\n' + "Dados pessoais" + '\n' +
+
+                        '\n' + "| " + "Nome: " + nome + "   " + "Sexo: " + sexo + "   " + "Data de nascimento: " + dataNascimento + "   " + "Idade: " + idade + '\n' +
+
+                        "| " + "CEP: " + cep + "   " + "CPF: " + cpf + "   " + "RG: " + rg + '\n' +
+
+                        "| " + "Mãe: " + mae + "   " + "Pai: " + pai + '\n' +
+
+                        "| " + "Celular: " + celular + "   " + "Email: " + email + '\n' +
+
+                        "| " + "Conta-Corente: " + contaCorente + "   " + "Agência: " + agencia + "   " + "Data de cadastro=" + dataCadastro + '\n' +
+
+                        "| " + "Reclamacoes=" + reclamacoes + '\n' +
+
+                        '\n' + "Local de nascimento" + '\n' +
+
+                        '\n' + "| " + "Estado: " + estado + "   " + "Cidade: " + cidade + '\n' +
+
+                        "| " + "Endereço: " + endereco + "   " + "Número: " + numero + "   " + "Bairro: " + bairro;
+    }
 }

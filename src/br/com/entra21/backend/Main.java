@@ -1,5 +1,7 @@
 package br.com.entra21.backend;
 
+import br.com.entra21.backend.bd.Cliente;
+import br.com.entra21.backend.bd.Empresa;
 import br.com.entra21.backend.menu.Chamadas;
 
 import java.awt.*;
