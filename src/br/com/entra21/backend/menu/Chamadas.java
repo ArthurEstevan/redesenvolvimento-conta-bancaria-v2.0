@@ -6,6 +6,8 @@ import br.com.entra21.backend.exceptions.SenhaIncorretaException;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Chamadas {
@@ -19,7 +21,7 @@ public class Chamadas {
         } else {
             System.out.println("");
             LocalDate amostra = LocalDate.now();
-            System.out.println("Bem vindo - " + amostra + " - 1/" + tentativa);
+            System.out.println("Bem vindo - " + amostra + " - 3/" + tentativa);
             System.out.println("==========================================");
         }
 
@@ -32,6 +34,7 @@ public class Chamadas {
 
             if (!funcionario.getSenha().equals(input.next())) {
                 throw new SenhaIncorretaException();
+
             } else {
                 verificarSenha(funcionario);
                 return;
@@ -43,6 +46,7 @@ public class Chamadas {
             return;
         } catch (SenhaIncorretaException e) {
             System.out.println(e.getMessage());
+            entrar(--tentativa);
             return;
         }
     }
@@ -53,7 +57,7 @@ public class Chamadas {
         } else {
             definirFuncionarioLogado(funcionario);
 
-            // MENU FUNCIONARIO
+            new FuncionarioMenu(new ArrayList<String>(Arrays.asList("Icrud Cliente", "Icrud Funcionario")), "Funcionario").executarMenu();
         }
     }
     private static void definirFuncionarioLogado(Funcionario funcionario) {

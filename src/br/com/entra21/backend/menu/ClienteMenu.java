@@ -8,11 +8,13 @@ import java.util.HashMap;
 public class ClienteMenu extends GeradorMenu implements ICrud<Cliente> {
 
     public ClienteMenu() {
-        super(opcoes, "Cliente");
+        super(opcoes, "Icrud Cliente");
     }
 
     @Override
     public byte capturarOpcao() {
+        System.out.println("==========================================");
+        System.out.print("selecione uma opcão: ");
         byte opcao = super.capturarOpcao();
 
         switch (opcao) {

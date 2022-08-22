@@ -22,17 +22,18 @@ public class GeradorMenu {
             System.out.println("");
             LocalDate amostra = LocalDate.now();
             System.out.println("Bem vindo - " + amostra);
-            System.out.println("===================== " + this.titulo + "=====================");
+            System.out.println("===================== Menu " + this.titulo + " =====================");
+            System.out.println("0) Sair");
+            System.out.println("1) Voltar");
             if (opcoes != null && !opcoes.isEmpty()) {
-                for (int count = 1; count < opcoes.size(); count++) {
-                    System.out.println((count+1) + ") " + opcoes.get(count));
+                for (int count = 0; count < opcoes.size(); count++) {
+                    System.out.println((count+2) + ") " + opcoes.get(count));
                 }
             } else {
                 System.out.println("Desculpe a informção está incorreta.");
             }
         } while (capturarOpcao() != 1);
     }
-
     public byte capturarOpcao() {
         try {
             byte opcao;
@@ -51,11 +52,9 @@ public class GeradorMenu {
             return capturarOpcao();
         }
     }
-
     public Scanner getInput() {
         return input;
     }
-
     public String getTitulo() {
         return titulo;
     }
