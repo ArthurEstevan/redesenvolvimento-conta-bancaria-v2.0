@@ -32,17 +32,19 @@ public class ICrudCliente extends GeradorMenu implements ICrud<Cliente> {
 
     @Override
     public void listar(HashMap<String, Cliente> lista) {
-        System.out.println("");
         LocalDate amostra = LocalDate.now();
-        System.out.println("Bem vindo - " + amostra);
+        System.out.println("\nBem vindo - " + amostra);
         System.out.println("==========================================");
-        System.out.println('\n' + "Dados pessoais");
+        System.out.println("""
+
+                Dados pessoais
+                """);
         for (Cliente cliente : lista.values()) {
             System.out.println(
                             '\n' + "| " + "Nome: " + cliente.getNome() + "   " + "Sexo: " + cliente.getSexo() + "   " + "Data de nascimento: " + cliente.getDataNascimento() + "   " + "Idade: " + cliente.getIdade() + '\n' +
 
                             "| " + "Celular: " + cliente.getCelular() + "   " + "Email: " + cliente.getEmail() + "   " + "CPF: " + cliente.getCpf() + '\n' +
-                            "-----------------------------------------------------------------------------------------------------------------------------------"
+                            "----------------------------------------------------------------------------------------------"
             );
         }
     }
@@ -70,12 +72,8 @@ public class ICrudCliente extends GeradorMenu implements ICrud<Cliente> {
         cliente.setCpf(chave.getCpf());
 
 
-        if (cliente == null) {
-            System.out.println("Desculpe a informção está incorreta.");
-        } else {
-            Armazenar.clientes.put(chave.getCpf(),cliente);
-            System.out.println("-cliente atualizado-");
-        }
+        Armazenar.clientes.put(chave.getCpf(),cliente);
+        System.out.println("-cliente atualizado-");
     }
 
     @Override
@@ -98,7 +96,10 @@ public class ICrudCliente extends GeradorMenu implements ICrud<Cliente> {
 
     @Override
     public Cliente capturarChave() {
-        System.out.println( '\n' + "Dados pessoais" + '\n');
+        System.out.println("""
+
+                Dados pessoais
+                """);
         for (Cliente cliente : Armazenar.clientes.values()) {
             System.out.println("| " + "Nome: " + cliente.getNome() + "   " + "CPF: " + cliente.getCpf() + '\n');
         }
@@ -119,9 +120,8 @@ public class ICrudCliente extends GeradorMenu implements ICrud<Cliente> {
         byte opcao = 120;
         String numero;
 
-        System.out.println("");
         LocalDate amostra = LocalDate.now();
-        System.out.println("Bem vindo - " + amostra);
+        System.out.println("\nBem vindo - " + amostra);
         System.out.println("==========================================");
 
         System.out.print("Informe o nome: ");
@@ -163,9 +163,8 @@ public class ICrudCliente extends GeradorMenu implements ICrud<Cliente> {
 
         byte opcao = 120;
 
-        System.out.println("");
         LocalDate amostra = LocalDate.now();
-        System.out.println("Bem vindo - " + amostra);
+        System.out.println("\nBem vindo - " + amostra);
         System.out.println("==========================================");
 
         System.out.print("Informe o nome: ");

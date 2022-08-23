@@ -9,6 +9,7 @@ public class Empresa {
 
     public Empresa() {
     }
+
     public Empresa(Cliente dono, String razapSocial, String cnpj) {
         this.cnpj = cnpj;
         this.razapSocial = razapSocial;

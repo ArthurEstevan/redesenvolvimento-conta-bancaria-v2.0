@@ -18,9 +18,8 @@ public class Chamadas {
         if (tentativa == 0) {
             System.out.println("Desculpe a informção está incorreta.");
         } else {
-            System.out.println("");
             LocalDate amostra = LocalDate.now();
-            System.out.println("Bem vindo - " + amostra + " - 3/" + tentativa);
+            System.out.println("\nBem vindo - " + amostra + " - 3/" + tentativa);
             System.out.println("==========================================");
         }
 
@@ -36,33 +35,30 @@ public class Chamadas {
 
             } else {
                 verificarSenha(funcionario);
-                return;
             }
 
         } catch (NullPointerException e) {
             System.out.println("Nenhum funcionário cadastrado com este cpf");
             entrar(--tentativa);
-            return;
         } catch (SenhaIncorretaException e) {
             System.out.println(e.getMessage());
             entrar(--tentativa);
-            return;
         }
     }
     private static void verificarSenha(Funcionario funcionario) {
-        if (funcionario.getSenha().equals(funcionario.getCpf()) || funcionario.getSenha().equals(funcionario.getDataCadastro().format(DateTimeFormatter.ofPattern("dd/MM/YYYY")))) {
+        if (funcionario.getSenha().equals(funcionario.getCpf()) || funcionario.getSenha().equals(funcionario.getDataCadastro().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")))) {
             atualizarSenha(funcionario);
-            Armazenar.funcionarios.size();
         } else {
             definirFuncionarioLogado(funcionario);
 
-            new FuncionarioMenu(new ArrayList<String>(Arrays.asList("Icrud Cliente", "Icrud Funcionário")), "Funcionário").executarMenu();
+            new CadastroMenu(new ArrayList<>(Arrays.asList("Icrud Cliente", "Icrud Funcionário", "Icrud Empresa")), "de Cadastros").executarMenu();
         }
     }
     private static void definirFuncionarioLogado(Funcionario funcionario) {
         if (funcionario != null) {
             System.out.println("~Tenha um ótimo dia de trabalho Sr. " + funcionario.getNome() + "~");
         } else {
+            assert false;
             System.out.println("~Espero que tenha tido um ótimo dia de trabalaho Sr. " + funcionario.getNome() + "~");
         }
         funcionarioLogado = funcionario;

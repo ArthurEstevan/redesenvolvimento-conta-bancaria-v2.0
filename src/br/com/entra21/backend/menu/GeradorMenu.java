@@ -7,8 +7,8 @@ import java.util.Scanner;
 
 public class GeradorMenu {
     private Scanner input;
-    private ArrayList<String> opcoes;
-    private String titulo;
+    private final ArrayList<String> opcoes;
+    private final String titulo;
 
     public GeradorMenu(ArrayList<String> opcoes, String titulo) {
         super();
@@ -19,9 +19,8 @@ public class GeradorMenu {
 
     public void executarMenu() {
         do {
-            System.out.println("");
             LocalDate amostra = LocalDate.now();
-            System.out.println("Bem vindo - " + amostra);
+            System.out.println("\nBem vindo - " + amostra);
             System.out.println("===================== Menu " + this.titulo + " =====================");
             System.out.println("0) Sair");
             System.out.println("1) Voltar");
@@ -42,8 +41,12 @@ public class GeradorMenu {
             opcao = input.nextByte();
 
             switch (opcao) {
-                case ZERO -> System.exit(ZERO);
+                case ZERO -> {
+                    System.out.println("Espero que tenha tido uma ótima experiência.");
+                    System.exit(ZERO);
+                }
                 case 1 -> System.out.println("Voltando...");
+                default -> System.out.println("Desculpe a informção está incorreta.");
             }
             return opcao;
 
@@ -56,10 +59,6 @@ public class GeradorMenu {
 
     public Scanner getInput() {
         return input;
-    }
-
-    public String getTitulo() {
-        return titulo;
     }
 
     public void setInput(Scanner input) {

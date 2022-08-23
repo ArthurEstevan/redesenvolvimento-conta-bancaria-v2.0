@@ -6,23 +6,23 @@ import java.util.HashMap;
 
 public interface ICrud<T> {
 
-    ArrayList<String> opcoes = new ArrayList<String>(Arrays.asList("Listar", "Adicionar", "Buscar", "Editar", "Deletar"));
+    ArrayList<String> opcoes = new ArrayList<>(Arrays.asList("Listar", "Adicionar", "Buscar", "Editar", "Deletar"));
 
-    public void listar(HashMap<String, T> lista);
+    void listar(HashMap<String, T> lista);
 
-    public void adicionar();
+    void adicionar();
 
-    public T buscar(T chave);
+    T buscar(T chave);
 
-    public void editar(T chave);
+    void editar(T chave);
 
-    public void deletar(T chave);
+    void deletar(T chave);
 
-    public T capturarChave();
+    T capturarChave();
 
-    public T capturarValores();
+    T capturarValores();
 
-    public void exibirDetalhes(T completo);
+    void exibirDetalhes(T completo);
 
-    public T atualizar();
+    T atualizar();
 }
