@@ -34,6 +34,7 @@ public class GeradorMenu {
             }
         } while (capturarOpcao() != 1);
     }
+
     public byte capturarOpcao() {
         try {
             byte opcao;
@@ -52,12 +53,15 @@ public class GeradorMenu {
             return capturarOpcao();
         }
     }
+
     public Scanner getInput() {
         return input;
     }
+
     public String getTitulo() {
         return titulo;
     }
+
     public void setInput(Scanner input) {
         this.input = input;
     }

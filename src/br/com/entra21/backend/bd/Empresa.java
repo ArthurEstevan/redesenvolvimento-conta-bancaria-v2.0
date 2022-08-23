@@ -42,6 +42,7 @@ public class Empresa {
     }
     // =========================== GETTER and SETTER =========================== //
 
+    // =========================== toString =========================== //
     @Override
     public String toString() {
         return
@@ -69,4 +70,5 @@ public class Empresa {
 
                         '\n' + "| " + "Razão social: " + razapSocial + "   " + "CNPJ: " + cnpj;
     }
+    // =========================== toString =========================== //
 }

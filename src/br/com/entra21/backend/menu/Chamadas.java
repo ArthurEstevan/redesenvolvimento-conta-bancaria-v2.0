@@ -3,7 +3,6 @@ package br.com.entra21.backend.menu;
 import br.com.entra21.backend.Armazenar;
 import br.com.entra21.backend.bd.Funcionario;
 import br.com.entra21.backend.exceptions.SenhaIncorretaException;
-
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;

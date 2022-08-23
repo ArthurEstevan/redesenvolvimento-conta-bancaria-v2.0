@@ -66,20 +66,20 @@ public class ICrudCliente extends GeradorMenu implements ICrud<Cliente> {
 
     @Override
     public void editar(Cliente chave) {
+        Cliente cliente = atualizar();
+        cliente.setCpf(chave.getCpf());
 
-        Cliente cliente = buscar(chave);
 
         if (cliente == null) {
             System.out.println("Desculpe a informção está incorreta.");
         } else {
-            Armazenar.clientes.put(chave.getCpf(), atualizar());
+            Armazenar.clientes.put(chave.getCpf(),cliente);
             System.out.println("-cliente atualizado-");
         }
     }
 
     @Override
     public void deletar(Cliente chave) {
-
         Cliente cliente = buscar(chave);
 
         // Mantedo posição das chaves no banco de dado consigo ter um controlo de exclusão, como se fosse num sistema de bd, a chave sempre aumenta nunca fica no mesmo lugar de outra chave;
@@ -101,7 +101,6 @@ public class ICrudCliente extends GeradorMenu implements ICrud<Cliente> {
         System.out.println( '\n' + "Dados pessoais" + '\n');
         for (Cliente cliente : Armazenar.clientes.values()) {
             System.out.println("| " + "Nome: " + cliente.getNome() + "   " + "CPF: " + cliente.getCpf() + '\n');
-
         }
 
         Cliente formulario = new Cliente();
@@ -163,7 +162,6 @@ public class ICrudCliente extends GeradorMenu implements ICrud<Cliente> {
         Cliente formulario = new Cliente();
 
         byte opcao = 120;
-        String numero;
 
         System.out.println("");
         LocalDate amostra = LocalDate.now();
@@ -185,13 +183,6 @@ public class ICrudCliente extends GeradorMenu implements ICrud<Cliente> {
         } while (opcao >= 118 || opcao <= 0);
         formulario.setIdade(opcao);
 
-        // Aqui apenas inverto o for para que o cpf da pessoa atualizada não fica null
-        if (formulario.getCpf() == null) {
-            for (int count = 1; count < 2; count++) {
-                numero = "00" + (count + (Armazenar.clientes.size() - 1));
-                formulario.setCpf(numero);
-            }
-        }
         return formulario;
     }
 }

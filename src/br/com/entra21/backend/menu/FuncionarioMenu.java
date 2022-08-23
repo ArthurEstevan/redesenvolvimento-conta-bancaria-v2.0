@@ -1,7 +1,6 @@
 package br.com.entra21.backend.menu;
 
 import br.com.entra21.backend.icrud.ICrudCliente;
-
 import java.util.ArrayList;
 
 public class FuncionarioMenu extends GeradorMenu {

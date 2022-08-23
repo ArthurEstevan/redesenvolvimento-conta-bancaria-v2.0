@@ -105,6 +105,7 @@ public class Pessoa {
         this.dataAtualizacao = dataAtualizacao;
     }
     // =========================== funcionario =========================== //
+
     // =========================== CONSTRUTORES =========================== //
 
     // =========================== GETTER =========================== //
@@ -280,7 +281,6 @@ public class Pessoa {
     // =========================== SETTER =========================== //
 
     // =========================== toString =========================== //
-
     @Override
     public String toString() {
         return
@@ -304,4 +304,5 @@ public class Pessoa {
 
                         "| " + "Endereço: " + endereco + "   " + "Número: " + numero + "   " + "Bairro: " + bairro;
     }
+    // =========================== toString =========================== //
 }
