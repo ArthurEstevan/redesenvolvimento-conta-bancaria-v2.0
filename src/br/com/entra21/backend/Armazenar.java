@@ -10,7 +10,7 @@ public interface Armazenar {
     public HashMap<String, Empresa> empresas = new HashMap();
     public HashMap<String, Funcionario> funcionarios = new HashMap();
 
-    // variÃ¡vel de teste para gerar empresa apÃ³s
+    // variável de teste para gerar empresa após
     Cliente cliente = new Cliente("Ricardo Yago Marcelo Moraes", (byte) 74, "001");
     public static void inicializarBancoDados() {
         inicializarClientes();
@@ -20,11 +20,11 @@ public interface Armazenar {
     public static void inicializarClientes() {
         clientes.put("001", cliente);
         clientes.put("002", new Cliente("Emilly Rafaela Lopes", (byte) 51, "002"));
-        clientes.put("003", new Cliente("ClÃ¡udia Lorena MaitÃª de Paula", (byte) 61, "003"));
-        clientes.put("004", new Cliente("Diogo AndrÃ© GonÃ§alves", (byte) 36, "004"));
+        clientes.put("003", new Cliente("Cláudia Lorena Maitê de Paula", (byte) 61, "003"));
+        clientes.put("004", new Cliente("Diogo André Gonçalves", (byte) 36, "004"));
     }
     public static void inicializarEmpresas() {
-        Empresa empresa = new Empresa( cliente,"Ricardo GrÃ¡fica ME","96.448.737/0001-40");
+        Empresa empresa = new Empresa( cliente,"Ricardo Gráfica ME","96.448.737/0001-40");
         empresas.put("001", empresa);
     }
     public static void inicializarFuncionarios() {

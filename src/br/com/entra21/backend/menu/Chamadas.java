@@ -26,7 +26,7 @@ public class Chamadas {
         }
 
         try {
-            System.out.print("Informe o cpf do funcionario: ");
+            System.out.print("Informe o cpf do funcionário: ");
             Funcionario funcionario = Armazenar.funcionarios.get(input.next().trim());
 
             System.out.println("Olá Sr. " + funcionario.getNome() + ".");
@@ -41,7 +41,7 @@ public class Chamadas {
             }
 
         } catch (NullPointerException e) {
-            System.out.println("Nenhum funcionario cadastrado com este cpf");
+            System.out.println("Nenhum funcionário cadastrado com este cpf");
             entrar(--tentativa);
             return;
         } catch (SenhaIncorretaException e) {
@@ -57,14 +57,14 @@ public class Chamadas {
         } else {
             definirFuncionarioLogado(funcionario);
 
-            new FuncionarioMenu(new ArrayList<String>(Arrays.asList("Icrud Cliente", "Icrud Funcionario")), "Funcionario").executarMenu();
+            new FuncionarioMenu(new ArrayList<String>(Arrays.asList("Icrud Cliente", "Icrud Funcionário")), "Funcionário").executarMenu();
         }
     }
     private static void definirFuncionarioLogado(Funcionario funcionario) {
         if (funcionario != null) {
-            System.out.println("Tenha um ótimo dia de trabalho Sr. " + funcionario.getNome());
+            System.out.println("~Tenha um ótimo dia de trabalho Sr. " + funcionario.getNome() + "~");
         } else {
-            System.out.println("Espero que tenha tido um ótimo dia de trabalaho Sr. " + funcionario.getNome());
+            System.out.println("~Espero que tenha tido um ótimo dia de trabalaho Sr. " + funcionario.getNome() + "~");
         }
         funcionarioLogado = funcionario;
     }

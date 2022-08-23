@@ -1,17 +1,16 @@
-package br.com.entra21.backend.menu;
+package br.com.entra21.backend.icrud;
 
 import br.com.entra21.backend.Armazenar;
 import br.com.entra21.backend.bd.Cliente;
-import br.com.entra21.backend.icrud.ICrud;
-
+import br.com.entra21.backend.menu.GeradorMenu;
 import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class ClienteMenu extends GeradorMenu implements ICrud<Cliente> {
+public class ICrudCliente extends GeradorMenu implements ICrud<Cliente> {
 
-    public ClienteMenu() {
+    public ICrudCliente() {
         super(opcoes, "Icrud Cliente");
     }
 
@@ -37,10 +36,9 @@ public class ClienteMenu extends GeradorMenu implements ICrud<Cliente> {
         LocalDate amostra = LocalDate.now();
         System.out.println("Bem vindo - " + amostra);
         System.out.println("==========================================");
+        System.out.println('\n' + "Dados pessoais");
         for (Cliente cliente : lista.values()) {
             System.out.println(
-                    '\n' + "Dados pessoais" + '\n' +
-
                             '\n' + "| " + "Nome: " + cliente.getNome() + "   " + "Sexo: " + cliente.getSexo() + "   " + "Data de nascimento: " + cliente.getDataNascimento() + "   " + "Idade: " + cliente.getIdade() + '\n' +
 
                             "| " + "Celular: " + cliente.getCelular() + "   " + "Email: " + cliente.getEmail() + "   " + "CPF: " + cliente.getCpf() + '\n' +
@@ -75,6 +73,7 @@ public class ClienteMenu extends GeradorMenu implements ICrud<Cliente> {
             System.out.println("Desculpe a informção está incorreta.");
         } else {
             Armazenar.clientes.put(chave.getCpf(), atualizar());
+            System.out.println("-cliente atualizado-");
         }
     }
 
@@ -101,11 +100,9 @@ public class ClienteMenu extends GeradorMenu implements ICrud<Cliente> {
     public Cliente capturarChave() {
         System.out.println( '\n' + "Dados pessoais" + '\n');
         for (Cliente cliente : Armazenar.clientes.values()) {
-            System.out.println("| " + "Nome: " + cliente.getNome() + "   " + "CPF: " + cliente.getCpf() + '\n' +
-                    "-----------------------------------------------------------------------------------------------------------------------------------");
+            System.out.println("| " + "Nome: " + cliente.getNome() + "   " + "CPF: " + cliente.getCpf() + '\n');
 
         }
-        System.out.println("");
 
         Cliente formulario = new Cliente();
 
@@ -174,7 +171,8 @@ public class ClienteMenu extends GeradorMenu implements ICrud<Cliente> {
         System.out.println("==========================================");
 
         System.out.print("Informe o nome: ");
-        formulario.setNome(getInput().next());
+        formulario.setNome(getInput().nextLine());
+        formulario.setNome(getInput().nextLine());
 
         do {
             try {
@@ -194,7 +192,6 @@ public class ClienteMenu extends GeradorMenu implements ICrud<Cliente> {
                 formulario.setCpf(numero);
             }
         }
-        System.out.println("==========================================");
         return formulario;
     }
 }
