@@ -41,7 +41,7 @@ public class ICrudCliente extends GeradorMenu implements ICrud<Cliente> {
                 """);
         for (Cliente cliente : lista.values()) {
             System.out.println(
-                            '\n' + "| " + "Nome: " + cliente.getNome() + "   " + "Sexo: " + cliente.getSexo() + "   " + "Data de nascimento: " + cliente.getDataNascimento() + "   " + "Idade: " + cliente.getIdade() + '\n' +
+                            "| " + "Nome: " + cliente.getNome() + "   " + "Sexo: " + cliente.getSexo() + "   " + "Data de nascimento: " + cliente.getDataNascimento() + "   " + "Idade: " + cliente.getIdade() + '\n' +
 
                             "| " + "Celular: " + cliente.getCelular() + "   " + "Email: " + cliente.getEmail() + "   " + "CPF: " + cliente.getCpf() + '\n' +
                             "----------------------------------------------------------------------------------------------"
@@ -126,7 +126,7 @@ public class ICrudCliente extends GeradorMenu implements ICrud<Cliente> {
 
         System.out.print("Informe o nome: ");
         formulario.setNome(super.getInput().nextLine());
-        formulario.setNome(super.getInput().nextLine());
+
         do {
             try {
                 System.out.print("Informe a idade: ");
@@ -146,12 +146,12 @@ public class ICrudCliente extends GeradorMenu implements ICrud<Cliente> {
                 formulario.setCpf(numero);
             }
         }
+        formulario.setDataCadastro(amostra);
         return formulario;
     }
 
     @Override
     public void exibirDetalhes(Cliente completo) {
-
         if (completo == null) {
             System.out.println("Desculpe a informção está incorreta.");
         } else System.out.println(completo.toString());
@@ -169,7 +169,6 @@ public class ICrudCliente extends GeradorMenu implements ICrud<Cliente> {
 
         System.out.print("Informe o nome: ");
         formulario.setNome(getInput().nextLine());
-        formulario.setNome(getInput().nextLine());
 
         do {
             try {
@@ -181,6 +180,7 @@ public class ICrudCliente extends GeradorMenu implements ICrud<Cliente> {
             }
         } while (opcao >= 118 || opcao <= 0);
         formulario.setIdade(opcao);
+        formulario.setDataCadastro(amostra);
 
         return formulario;
     }

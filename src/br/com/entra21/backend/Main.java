@@ -24,15 +24,16 @@ public class Main {
             }
 
             switch (opcao) {
-                case ZERO -> System.out.println("Espero que tenha tido uma Ã³tima experiÃªncia.");
+                case ZERO -> System.out.println("Espero que tenha tido uma ótima experiência.");
                 case 1 -> Chamadas.entrar(TENTATIVA);
-//                case 2 -> Chamadas.cadastrar(TENTATIVA);
-//                case 3 -> Chamadas.alterarSenha(TENTATIVA);
-//                case 4 -> Chamadas.sobre();
-                default -> System.out.println("Desculpe a informÃ§Ã£o estÃ¡ incorreta.");
+                case 2 -> Chamadas.cadastrar(TENTATIVA);
+                case 3 -> Chamadas.recuperarSenhaFuncionario(TENTATIVA);
+                case 4 -> Chamadas.sobre();
+                default -> System.out.println("Desculpe a informção está incorreta.");
             }
         } while (opcao != 0);
     }
+
     public static void menu() {
         LocalDate amostra = LocalDate.now();
         System.out.println("\nBem vindo - " + amostra);
@@ -40,6 +41,6 @@ public class Main {
         ArrayList<String> opcao = new ArrayList<>(Arrays.asList("0) Sair", "1) Entrar", "2) Cadastrar", "3) Alterar senha", "4) Sobre"));
         opcao.forEach(System.out::println);
         System.out.println("==========================================");
-        System.out.print("selecione uma opcÃ£o: ");
+        System.out.print("selecione uma opcão: ");
     }
 }

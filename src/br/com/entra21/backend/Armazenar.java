@@ -24,8 +24,8 @@ public interface Armazenar {
         clientes.put("004", new Cliente("Diogo André Gonçalves", (byte) 36, "004"));
     }
     static void inicializarEmpresas() {
-        Empresa empresa = new Empresa( cliente,"Ricardo Gráfica ME","96.448.737/0001-40");
-        empresas.put("001", empresa);
+        Empresa empresa = new Empresa(cliente,"Ricardo Gráfica ME","96.448.737/0001-40");
+        empresas.put(cliente.getCpf(), empresa);
     }
     static void inicializarFuncionarios() {
         Funcionario funcionario = new Funcionario("Admin", (byte) 33, "001", "001");

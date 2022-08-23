@@ -7,14 +7,17 @@ import java.util.Scanner;
 
 public class GeradorMenu {
     private Scanner input;
-    private final ArrayList<String> opcoes;
-    private final String titulo;
+    private ArrayList<String> opcoes;
+    private String titulo;
 
     public GeradorMenu(ArrayList<String> opcoes, String titulo) {
         super();
         this.input = new Scanner(System.in);
         this.opcoes = opcoes;
         this.titulo = titulo;
+    }
+
+    public GeradorMenu() {
     }
 
     public void executarMenu() {
@@ -46,7 +49,6 @@ public class GeradorMenu {
                     System.exit(ZERO);
                 }
                 case 1 -> System.out.println("Voltando...");
-                default -> System.out.println("Desculpe a informção está incorreta.");
             }
             return opcao;
 
