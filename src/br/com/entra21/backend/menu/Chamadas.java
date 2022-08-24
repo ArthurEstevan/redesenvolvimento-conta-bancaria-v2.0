@@ -14,7 +14,7 @@ import java.util.Scanner;
 
 public class Chamadas {
     static Scanner input = new Scanner(System.in);
-    public static Funcionario funcionarioLogado = null;
+    static Funcionario funcionarioLogado = null;
 
     // =========================== Entrar =========================== //
     public static void entrar(byte tentativa) {

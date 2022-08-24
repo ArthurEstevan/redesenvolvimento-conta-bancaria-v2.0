@@ -26,7 +26,6 @@ public class Pessoa {
     private String email;
     private ArrayList<String> reclamacoes;
     private LocalDate dataCadastro;
-    private LocalDate dataAtualizacao;
 
     // =========================== ATRIBUTOS =========================== //
 
@@ -78,12 +77,11 @@ public class Pessoa {
         this.email = email;
         this.reclamacoes = reclamacoes;
         this.dataCadastro = LocalDate.now();
-        this.dataAtualizacao = dataCadastro;
     }
     // =========================== cliente =========================== //
 
     // =========================== funcionario =========================== //
-    public Pessoa(String nome, byte idade, String cpf, String rg, LocalDate dataNascimento, String sexo, String mae, String pai, String cep, String endereco, String numero, String bairro, String cidade, String estado, String celular, String email, ArrayList<String> reclamacoes, LocalDate dataCadastro, LocalDate dataAtualizacao) {
+    public Pessoa(String nome, byte idade, String cpf, String rg, LocalDate dataNascimento, String sexo, String mae, String pai, String cep, String endereco, String numero, String bairro, String cidade, String estado, String celular, String email, ArrayList<String> reclamacoes, LocalDate dataCadastro) {
         this.nome = nome;
         this.idade = idade;
         this.cpf = cpf;
@@ -102,7 +100,6 @@ public class Pessoa {
         this.email = email;
         this.reclamacoes = reclamacoes;
         this.dataCadastro = dataCadastro;
-        this.dataAtualizacao = dataAtualizacao;
     }
     // =========================== funcionario =========================== //
 
@@ -189,9 +186,6 @@ public class Pessoa {
         return dataCadastro;
     }
 
-    public LocalDate getDataAtualizacao() {
-        return dataAtualizacao;
-    }
     // =========================== GETTER =========================== //
 
     // =========================== SETTER =========================== //
@@ -275,9 +269,6 @@ public class Pessoa {
         this.dataCadastro = dataCadastro;
     }
 
-    public void setDataAtualizacao(LocalDate dataAtualizacao) {
-        this.dataAtualizacao = dataAtualizacao;
-    }
     // =========================== SETTER =========================== //
 
     // =========================== toString =========================== //
