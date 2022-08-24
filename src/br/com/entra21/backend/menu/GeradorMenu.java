@@ -29,7 +29,7 @@ public class GeradorMenu {
             System.out.println("1) Voltar");
             if (opcoes != null && !opcoes.isEmpty()) {
                 for (int count = 0; count < opcoes.size(); count++) {
-                    System.out.println((count+2) + ") " + opcoes.get(count));
+                    System.out.println((count + 2) + ") " + opcoes.get(count));
                 }
             } else {
                 System.out.println("Desculpe a informção está incorreta.");

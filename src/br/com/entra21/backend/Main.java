@@ -5,6 +5,7 @@ import java.time.LocalDate;
 import java.util.*;
 
 public class Main {
+
     static Scanner input = new Scanner(System.in);
 
     public static void main(String[] args) {
@@ -27,7 +28,7 @@ public class Main {
                 case ZERO -> System.out.println("Espero que tenha tido uma ótima experiência.");
                 case 1 -> Chamadas.entrar(TENTATIVA);
                 case 2 -> Chamadas.cadastrar(TENTATIVA);
-                case 3 -> Chamadas.recuperarSenhaFuncionario(TENTATIVA);
+                case 3 -> Chamadas.recuperarSenha(TENTATIVA);
                 case 4 -> Chamadas.sobre();
                 default -> System.out.println("Desculpe a informção está incorreta.");
             }

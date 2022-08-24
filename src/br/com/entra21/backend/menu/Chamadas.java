@@ -133,7 +133,7 @@ public class Chamadas {
     }
 
     // =========================== Recuperação de senha =========================== //
-    public static void recuperarSenhaFuncionario(byte tentativa) {
+    public static void recuperarSenha(byte tentativa) {
 
         if (tentativa == 0) {
             System.out.println("Desculpe a informção está incorreta.");
@@ -148,7 +148,7 @@ public class Chamadas {
             Funcionario funcionario = Armazenar.funcionarios.get(input.next().trim());
 
             System.out.println("Funcionario encontrado: " + funcionario.getNome());
-            funcionario.setSenha(funcionario.getDataCadastro().format(DateTimeFormatter.ofPattern("dd/MM/YYYY")));
+            funcionario.setSenha(funcionario.getDataCadastro().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")));
             Armazenar.funcionarios.put(funcionario.getCpf(), funcionario);
 
             System.out.println("A senha foi atualizada com a data de admissao no formato dd/MM/YYYY:");
@@ -159,7 +159,7 @@ public class Chamadas {
         } catch (NullPointerException e) {
 
             System.out.println("Nenhum funcionário encontrado com esse CPF.");
-            recuperarSenhaFuncionario(--tentativa);
+            recuperarSenha(--tentativa);
         }
     }
 }

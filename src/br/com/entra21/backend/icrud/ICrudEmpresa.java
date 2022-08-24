@@ -7,7 +7,6 @@ import br.com.entra21.backend.menu.GeradorMenu;
 import java.time.LocalDate;
 import java.util.HashMap;
 
-
 public class ICrudEmpresa extends GeradorMenu implements ICrud<Empresa> {
 
     public ICrudEmpresa() {
@@ -146,5 +145,4 @@ public class ICrudEmpresa extends GeradorMenu implements ICrud<Empresa> {
     public Empresa atualizar() {
         return null;
     }
-
 }
