@@ -2,7 +2,7 @@ package br.com.entra21.backend.bd;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
+
 
 public class Pessoa {
 
@@ -260,10 +260,6 @@ public class Pessoa {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public void setReclamacoes(ArrayList<String> reclamacoes) {
-        this.reclamacoes = reclamacoes;
     }
 
     public void setDataCadastro(LocalDate dataCadastro) {

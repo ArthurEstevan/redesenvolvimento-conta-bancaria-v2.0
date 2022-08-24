@@ -10,7 +10,7 @@ public enum Investimento {
     private final String rentabilidade;
     private final String dataDeVencimento;
 
-    private Investimento(double precoUnitario, String rentabilidade, String dataDeVencimento) {
+    Investimento(double precoUnitario, String rentabilidade, String dataDeVencimento) {
         this.precoUnitario = precoUnitario;
         this.rentabilidade = rentabilidade;
         this.dataDeVencimento = dataDeVencimento;

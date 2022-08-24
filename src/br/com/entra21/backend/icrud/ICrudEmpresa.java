@@ -42,8 +42,8 @@ public class ICrudEmpresa extends GeradorMenu implements ICrud<Empresa> {
             System.out.println(
                     "| " + "Nome: " + empresa.getDono().getNome() + "   " + "Sexo: " + empresa.getDono().getSexo() + "   " + "Data de nascimento: " + empresa.getDono().getDataNascimento() + "   " + "Idade: " + empresa.getDono().getIdade() + '\n' +
 
-                            "| " + "Celular: " + empresa.getDono().getCelular() + "   " + "Email: " + empresa.getDono().getEmail() + "   " + "CPF: " + empresa.getDono().getCpf() + '\n' +
-                            "----------------------------------------------------------------------------------------------"
+                            "| " + "Celular: " + empresa.getDono().getCelular() + "   " + "Email: " + empresa.getDono().getEmail() + "   " + "CPF: " + empresa.getDono().getCpf() + "   " + "Razão social: " + empresa.getRazapSocial() + '\n' +
+                    "----------------------------------------------------------------------------------------------"
             );
         }
     }

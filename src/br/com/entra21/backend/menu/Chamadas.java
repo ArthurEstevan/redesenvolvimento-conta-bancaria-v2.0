@@ -5,7 +5,6 @@ import br.com.entra21.backend.bd.Funcionario;
 import br.com.entra21.backend.exceptions.FuncionarioExistenteException;
 import br.com.entra21.backend.exceptions.SenhaIncorretaException;
 import br.com.entra21.backend.icrud.ICrudFuncionario;
-
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;

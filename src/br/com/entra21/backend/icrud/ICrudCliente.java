@@ -3,12 +3,7 @@ package br.com.entra21.backend.icrud;
 import br.com.entra21.backend.Armazenar;
 import br.com.entra21.backend.bd.Cliente;
 import br.com.entra21.backend.menu.GeradorMenu;
-
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -106,7 +101,8 @@ public class ICrudCliente extends GeradorMenu implements ICrud<Cliente> {
                 Dados pessoais
                 """);
         for (Cliente cliente : Armazenar.clientes.values()) {
-            System.out.println("| " + "Nome: " + cliente.getNome() + "   " + "CPF: " + cliente.getCpf() + '\n');
+            System.out.println("| " + "Nome: " + cliente.getNome() + "   " + "CPF: " + cliente.getCpf() + '\n' +
+                               "----------------------------------------------------------------------------------------------");
         }
 
         Cliente formulario = new Cliente();
@@ -155,11 +151,6 @@ public class ICrudCliente extends GeradorMenu implements ICrud<Cliente> {
 
         System.out.print("Informe a data de nascimento: ");
         formulario.setDataNascimento(getInput().next());
-
-//        String data = getInput().next(); // 31 de fevereiro de 2022
-//        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-//        LocalDate date = LocalDate.parse(data, formatter);
-//        formulario.setDataNascimento(date);
 
         System.out.print("Informe o sexo: ");
         formulario.setSexo(super.getInput().next());

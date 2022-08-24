@@ -18,10 +18,6 @@ public class Empresa {
     // =========================== ATRIBUTOS and CONSTRUTORES =========================== //
 
     // =========================== GETTER and SETTER =========================== //
-    public String getCnpj() {
-        return cnpj;
-    }
-
     public Cliente getDono() {
         return dono;
     }

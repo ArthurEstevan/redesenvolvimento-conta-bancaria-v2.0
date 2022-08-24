@@ -2,7 +2,6 @@ package br.com.entra21.backend.bd;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 
 public class Funcionario extends Pessoa {
 

@@ -34,6 +34,10 @@ public class ClienteMenu extends GeradorMenu implements Operacoes {
 
     @Override
     public void dadosBancario() {
+        System.out.println(
+                "\n" + "| " + "Nome: " + this.cliente.getNome() + "   " + "Idade: " + this.cliente.getIdade() + "   " + "CPF: " + this.cliente.getCpf() + '\n' +
+                        "----------------------------------------"
+        );
     }
 
     @Override
@@ -58,8 +62,9 @@ public class ClienteMenu extends GeradorMenu implements Operacoes {
         System.out.printf("Saldo anterior: " + this.cliente.getSaldo() + "\n");
         if (this.cliente.getSaldo() > pValor) {
             this.cliente.setSaldo((this.cliente.getSaldo() - pValor));
-            System.out.print("-operacao realizada com sucesso-\n");
             System.out.print("Saldo posterior: " + this.cliente.getSaldo() + "\n");
+            System.out.println("========================================");
+            System.out.print("-operacao realizada com sucesso-\n");
         } else {
             System.out.print("-saldo insuficiente-\n");
         }
@@ -110,25 +115,39 @@ public class ClienteMenu extends GeradorMenu implements Operacoes {
 
         switch (opcao) {
             case "TESOURO_IPCA" -> {
-                for (int year = 1; year <= 4; ++year) {
-                    amount = pValorMs * Math.pow(1.0 + 0.1703, year);
-                    System.out.printf("\n\t%4d%,20.2f%n", year, amount);
+                if (pValorMs >= Investimento.TESOURO_IPCA.getPrecoUnitario()) {
+                    for (int year = 1; year <= 4; ++year) {
+                        amount = pValorMs * Math.pow(1.0 + 0.1703, year);
+                        System.out.printf("\n\t%4d%,20.2f%n", year, amount);
+                    }
+                    this.cliente.setSaldo((this.cliente.getSaldo() - pValorMs));
+                } else {
+                    System.out.println("Desculpe a informção está incorreta.");
                 }
-                this.cliente.setSaldo((this.cliente.getSaldo() - pValorMs));
+
             }
             case "TESOURO_SELIC" -> {
-                for (int year = 1; year <= 3; ++year) {
-                    amount = pValorMs * Math.pow(1.0 + 0.2445, year);
-                    System.out.printf("\n\t%4d%,20.2f%n", year, amount);
+                if (pValorMs >= Investimento.TESOURO_SELIC.getPrecoUnitario()) {
+                    for (int year = 1; year <= 3; ++year) {
+                        amount = pValorMs * Math.pow(1.0 + 0.2445, year);
+                        System.out.printf("\n\t%4d%,20.2f%n", year, amount);
+                    }
+                    this.cliente.setSaldo((this.cliente.getSaldo() - pValorMs));
+                } else {
+                    System.out.println("Desculpe a informção está incorreta.");
                 }
-                this.cliente.setSaldo((this.cliente.getSaldo() - pValorMs));
+
             }
             case "TESOURO_PREFIXADO" -> {
-                for (int year = 1; year <= 3; ++year) {
-                    amount = pValorMs * Math.pow(1.0 + 0.1264, year);
-                    System.out.printf("\n\t%4d%,20.2f%n", year, amount);
+                if (pValorMs >= Investimento.TESOURO_PREFIXADO.getPrecoUnitario()) {
+                    for (int year = 1; year <= 3; ++year) {
+                        amount = pValorMs * Math.pow(1.0 + 0.1264, year);
+                        System.out.printf("\n\t%4d%,20.2f%n", year, amount);
+                    }
+                    this.cliente.setSaldo((this.cliente.getSaldo() - pValorMs));
+                } else {
+                    System.out.println("Desculpe a informção está incorreta.");
                 }
-                this.cliente.setSaldo((this.cliente.getSaldo() - pValorMs));
             }
         }
     }

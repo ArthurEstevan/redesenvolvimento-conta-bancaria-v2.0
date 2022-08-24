@@ -6,7 +6,6 @@ import br.com.entra21.backend.menu.GeradorMenu;
 import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.InputMismatchException;
-import java.util.Locale;
 import java.util.Scanner;
 
 public class ICrudFuncionario extends GeradorMenu implements ICrud<Funcionario> {
@@ -152,11 +151,6 @@ public class ICrudFuncionario extends GeradorMenu implements ICrud<Funcionario> 
 
         System.out.print("Informe a data de nascimento: ");
         formulario.setDataNascimento(getInput().next());
-
-//        String data = getInput().next(); // 31 de fevereiro de 2022
-//        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-//        LocalDate date = LocalDate.parse(data, formatter);
-//        formulario.setDataNascimento(date);
 
         System.out.print("Informe o sexo: ");
         formulario.setSexo(super.getInput().next());

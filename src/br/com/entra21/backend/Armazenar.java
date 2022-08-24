@@ -3,8 +3,6 @@ package br.com.entra21.backend;
 import br.com.entra21.backend.bd.Cliente;
 import br.com.entra21.backend.bd.Empresa;
 import br.com.entra21.backend.bd.Funcionario;
-
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.*;

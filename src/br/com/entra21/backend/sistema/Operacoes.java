@@ -7,17 +7,17 @@ public interface Operacoes {
 
     ArrayList<String> opcoes = new ArrayList<>(Arrays.asList("Dados bancários", "Depósito", "Sacar", "Transferência", "Investimento", "Saldo"));
 
-    public void dadosBancario();
+    void dadosBancario();
 
-    public void deposito(double pValor);
+    void deposito(double pValor);
 
-    public void sacar(double pValor);
+    void sacar(double pValor);
 
-    public void transferencia(double pValor);
+    void transferencia(double pValor);
 
-    public void investimento();
+    void investimento();
 
-    public void saldo();
+    void saldo();
 
-    public double capturandoValor();
+    double capturandoValor();
 }
