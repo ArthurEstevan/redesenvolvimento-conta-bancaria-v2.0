@@ -1,14 +1,15 @@
 package br.com.entra21.backend.menu;
 
+import br.com.entra21.backend.Armazenar;
 import br.com.entra21.backend.icrud.ICrudCliente;
 import br.com.entra21.backend.icrud.ICrudEmpresa;
 import br.com.entra21.backend.icrud.ICrudFuncionario;
 
 import java.util.ArrayList;
 
-public class CadastroMenu extends GeradorMenu {
+public class FuncionarioMenu extends GeradorMenu {
 
-    public CadastroMenu(ArrayList<String> opcoes, String titulo) {
+    public FuncionarioMenu(ArrayList<String> opcoes, String titulo) {
         super(opcoes, titulo);
     }
 
@@ -22,6 +23,7 @@ public class CadastroMenu extends GeradorMenu {
             case 2 -> new ICrudCliente().executarMenu();
             case 3 -> new ICrudFuncionario().executarMenu();
             case 4 -> new ICrudEmpresa().executarMenu();
+            case 5 -> new ClienteMenu(Armazenar.cliente006).executarMenu();
         }
         return opcao;
     }

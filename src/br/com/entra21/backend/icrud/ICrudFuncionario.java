@@ -147,8 +147,54 @@ public class ICrudFuncionario extends GeradorMenu implements ICrud<Funcionario> 
                 formulario.setCpf(numero);
             }
         }
-        LocalDate amostrar = LocalDate.now();
-        formulario.setDataCadastro(amostrar);
+        System.out.print("Informe o RG: ");
+        formulario.setRg(super.getInput().next());
+
+        System.out.print("Informe a data de nascimento: ");
+        formulario.setDataNascimento(getInput().next());
+
+//        String data = getInput().next(); // 31 de fevereiro de 2022
+//        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+//        LocalDate date = LocalDate.parse(data, formatter);
+//        formulario.setDataNascimento(date);
+
+        System.out.print("Informe o sexo: ");
+        formulario.setSexo(super.getInput().next());
+
+        System.out.print("Informe o nome da mãe: ");
+        formulario.setMae(super.getInput().next());
+
+        System.out.print("Informe o nome do pai: ");
+        formulario.setPai(super.getInput().next());
+
+        System.out.print("Informe o CEP: ");
+        formulario.setCep(super.getInput().next());
+
+        System.out.print("Informe o endereço: ");
+        formulario.setEndereco(super.getInput().next());
+
+        System.out.print("Informe o numero: ");
+        formulario.setNumero(super.getInput().next());
+
+        System.out.print("Informe o bairro: ");
+        formulario.setBairro(super.getInput().next());
+
+        System.out.print("Informe a cidade: ");
+        formulario.setCidade(super.getInput().next());
+
+        System.out.print("Informe o estado: ");
+        formulario.setEstado(super.getInput().next());
+
+        System.out.print("Informe a conta-corrente: ");
+        formulario.setContaCorente(super.getInput().next());
+
+        System.out.print("Informe o email: ");
+        formulario.setEmail(super.getInput().next());
+
+        LocalDate amostra = LocalDate.now();
+
+        formulario.setAgencia("3048");
+        formulario.setDataCadastro(amostra);
 
         return formulario;
     }

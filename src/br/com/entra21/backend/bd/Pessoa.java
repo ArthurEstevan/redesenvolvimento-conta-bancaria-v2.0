@@ -2,6 +2,7 @@ package br.com.entra21.backend.bd;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Pessoa {
 
@@ -10,7 +11,7 @@ public class Pessoa {
     private byte idade;
     private String cpf;
     private String rg;
-    private LocalDate dataNascimento;
+    private String dataNascimento;
     private String sexo;
     private String mae;
     private String pai;
@@ -56,7 +57,7 @@ public class Pessoa {
     }
 
     // =========================== cliente =========================== //
-    public Pessoa(String nome, byte idade, String cpf, String rg, LocalDate dataNascimento, String sexo, String mae, String pai, String cep, String endereco, String numero, String bairro, String cidade, String estado, String celular, String contaCorente, String agencia, String email, ArrayList<String> reclamacoes) {
+    public Pessoa(String nome, byte idade, String cpf, String rg, String dataNascimento, String sexo, String mae, String pai, String cep, String endereco, String numero, String bairro, String cidade, String estado, String celular, String contaCorente, String agencia, String email, ArrayList<String> reclamacoes) {
         this.nome = nome;
         this.idade = idade;
         this.cpf = cpf;
@@ -81,7 +82,7 @@ public class Pessoa {
     // =========================== cliente =========================== //
 
     // =========================== funcionario =========================== //
-    public Pessoa(String nome, byte idade, String cpf, String rg, LocalDate dataNascimento, String sexo, String mae, String pai, String cep, String endereco, String numero, String bairro, String cidade, String estado, String celular, String email, ArrayList<String> reclamacoes, LocalDate dataCadastro) {
+    public Pessoa(String nome, byte idade, String cpf, String rg, String dataNascimento, String sexo, String mae, String pai, String cep, String endereco, String numero, String bairro, String cidade, String estado, String celular, String email, ArrayList<String> reclamacoes, LocalDate dataCadastro) {
         this.nome = nome;
         this.idade = idade;
         this.cpf = cpf;
@@ -122,7 +123,7 @@ public class Pessoa {
         return rg;
     }
 
-    public LocalDate getDataNascimento() {
+    public String getDataNascimento() {
         return dataNascimento;
     }
 
@@ -205,7 +206,7 @@ public class Pessoa {
         this.rg = rg;
     }
 
-    public void setDataNascimento(LocalDate dataNascimento) {
+    public void setDataNascimento(String dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
 

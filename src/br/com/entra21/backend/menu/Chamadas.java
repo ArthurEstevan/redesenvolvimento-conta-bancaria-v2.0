@@ -55,7 +55,7 @@ public class Chamadas {
         } else {
             definirFuncionarioLogado(funcionario);
 
-            new CadastroMenu(new ArrayList<>(Arrays.asList("Icrud Cliente", "Icrud Funcionário", "Icrud Empresa")), "de Cadastros").executarMenu();
+            new FuncionarioMenu(new ArrayList<>(Arrays.asList("Icrud Cliente", "Icrud Funcionário", "Icrud Empresa", "Ambiente de Operações")), "do Funcionario").executarMenu();
         }
     }
 

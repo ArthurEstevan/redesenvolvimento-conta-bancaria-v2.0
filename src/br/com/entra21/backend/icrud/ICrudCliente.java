@@ -3,7 +3,12 @@ package br.com.entra21.backend.icrud;
 import br.com.entra21.backend.Armazenar;
 import br.com.entra21.backend.bd.Cliente;
 import br.com.entra21.backend.menu.GeradorMenu;
+
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -41,7 +46,7 @@ public class ICrudCliente extends GeradorMenu implements ICrud<Cliente> {
                 """);
         for (Cliente cliente : lista.values()) {
             System.out.println(
-                            "| " + "Nome: " + cliente.getNome() + "   " + "Sexo: " + cliente.getSexo() + "   " + "Data de nascimento: " + cliente.getDataNascimento() + "   " + "Idade: " + cliente.getIdade() + '\n' +
+                    "| " + "Nome: " + cliente.getNome() + "   " + "Sexo: " + cliente.getSexo() + "   " + "Data de nascimento: " + cliente.getDataNascimento() + "   " + "Idade: " + cliente.getIdade() + '\n' +
 
                             "| " + "Celular: " + cliente.getCelular() + "   " + "Email: " + cliente.getEmail() + "   " + "CPF: " + cliente.getCpf() + '\n' +
                             "----------------------------------------------------------------------------------------------"
@@ -72,7 +77,7 @@ public class ICrudCliente extends GeradorMenu implements ICrud<Cliente> {
         cliente.setCpf(chave.getCpf());
 
 
-        Armazenar.clientes.put(chave.getCpf(),cliente);
+        Armazenar.clientes.put(chave.getCpf(), cliente);
         System.out.println("-cliente atualizado-");
     }
 
@@ -125,8 +130,7 @@ public class ICrudCliente extends GeradorMenu implements ICrud<Cliente> {
         System.out.println("==========================================");
 
         System.out.print("Informe o nome: ");
-        formulario.setNome(super.getInput().nextLine());
-
+        formulario.setNome(super.getInput().next());
         do {
             try {
                 System.out.print("Informe a idade: ");
@@ -146,6 +150,52 @@ public class ICrudCliente extends GeradorMenu implements ICrud<Cliente> {
                 formulario.setCpf(numero);
             }
         }
+        System.out.print("Informe o RG: ");
+        formulario.setRg(super.getInput().next());
+
+        System.out.print("Informe a data de nascimento: ");
+        formulario.setDataNascimento(getInput().next());
+
+//        String data = getInput().next(); // 31 de fevereiro de 2022
+//        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+//        LocalDate date = LocalDate.parse(data, formatter);
+//        formulario.setDataNascimento(date);
+
+        System.out.print("Informe o sexo: ");
+        formulario.setSexo(super.getInput().next());
+
+        System.out.print("Informe o nome da mãe: ");
+        formulario.setMae(super.getInput().next());
+
+        System.out.print("Informe o nome do pai: ");
+        formulario.setPai(super.getInput().next());
+
+        System.out.print("Informe o CEP: ");
+        formulario.setCep(super.getInput().next());
+
+        System.out.print("Informe o endereço: ");
+        formulario.setEndereco(super.getInput().next());
+
+        System.out.print("Informe o numero: ");
+        formulario.setNumero(super.getInput().next());
+
+        System.out.print("Informe o bairro: ");
+        formulario.setBairro(super.getInput().next());
+
+        System.out.print("Informe a cidade: ");
+        formulario.setCidade(super.getInput().next());
+
+        System.out.print("Informe o estado: ");
+        formulario.setEstado(super.getInput().next());
+
+        System.out.print("Informe a conta-corrente: ");
+        formulario.setContaCorente(super.getInput().next());
+
+        System.out.print("Informe o email: ");
+        formulario.setEmail(super.getInput().next());
+
+        formulario.setAgencia("3048");
+
         formulario.setDataCadastro(amostra);
         return formulario;
     }
