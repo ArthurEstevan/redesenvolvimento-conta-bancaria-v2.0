@@ -79,7 +79,7 @@ public class Pessoa {
     }
 
     // =========================== Construtor de Funcionario =========================== //
-    public Pessoa(String nome, byte idade, String cpf, String rg, String dataNascimento, String sexo, String mae, String pai, String cep, String endereco, String numero, String bairro, String cidade, String estado, String celular, String email, ArrayList<String> reclamacoes, LocalDate dataCadastro) {
+    public Pessoa(String nome, byte idade, String cpf, String rg, String dataNascimento, String sexo, String mae, String pai, String cep, String endereco, String numero, String bairro, String cidade, String estado, String celular, String email, ArrayList<String> reclamacoes) {
         this.nome = nome;
         this.idade = idade;
         this.cpf = cpf;
@@ -97,7 +97,7 @@ public class Pessoa {
         this.celular = celular;
         this.email = email;
         this.reclamacoes = reclamacoes;
-        this.dataCadastro = dataCadastro;
+        this.dataCadastro = LocalDate.now();
     }
 
     // =========================== Getters =========================== //

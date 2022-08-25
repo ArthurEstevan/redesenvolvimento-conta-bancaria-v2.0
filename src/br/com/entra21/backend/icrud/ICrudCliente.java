@@ -3,7 +3,6 @@ package br.com.entra21.backend.icrud;
 import br.com.entra21.backend.Armazenar;
 import br.com.entra21.backend.bd.Cliente;
 import br.com.entra21.backend.menu.GeradorMenu;
-import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -32,7 +31,7 @@ public class ICrudCliente extends GeradorMenu implements ICrud<Cliente> {
 
     @Override
     public void listar(HashMap<String, Cliente> lista) {
-        System.out.println("\nBem vindo - " + dataCadastro);
+        System.out.println("\nBem vindo - " + GeradorMenu.getDataCadastro());
         System.out.println("==========================================");
         System.out.println("""
 
@@ -119,7 +118,7 @@ public class ICrudCliente extends GeradorMenu implements ICrud<Cliente> {
         byte opcao = 120;
         String numero;
 
-        System.out.println("\nBem vindo - " + dataCadastro);
+        System.out.println("\nBem vindo - " + GeradorMenu.getDataCadastro());
         System.out.println("==========================================");
 
         System.out.print("Informe o nome: ");
@@ -187,7 +186,7 @@ public class ICrudCliente extends GeradorMenu implements ICrud<Cliente> {
 
         formulario.setAgencia("3048");
 
-        formulario.setDataCadastro(dataCadastro);
+        formulario.setDataCadastro(GeradorMenu.getDataCadastro());
         return formulario;
     }
 
@@ -204,7 +203,7 @@ public class ICrudCliente extends GeradorMenu implements ICrud<Cliente> {
 
         byte opcao = 120;
 
-        System.out.println("\nBem vindo - " + dataCadastro);
+        System.out.println("\nBem vindo - " + GeradorMenu.getDataCadastro());
         System.out.println("==========================================");
 
         System.out.print("Informe o nome: ");
@@ -265,7 +264,7 @@ public class ICrudCliente extends GeradorMenu implements ICrud<Cliente> {
 
         formulario.setAgencia("3048");
 
-        formulario.setDataCadastro(dataCadastro);
+        formulario.setDataCadastro(GeradorMenu.getDataCadastro());
         return formulario;
     }
 }

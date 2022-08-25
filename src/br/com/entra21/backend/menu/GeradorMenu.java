@@ -6,6 +6,8 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class GeradorMenu {
+
+    static LocalDate dataCadastro = LocalDate.now();
     private Scanner input;
     private ArrayList<String> opcoes;
     private String titulo;
@@ -22,8 +24,7 @@ public class GeradorMenu {
 
     public void executarMenu() {
         do {
-            LocalDate amostra = LocalDate.now();
-            System.out.println("\nBem vindo - " + amostra);
+            System.out.println("\nBem vindo - " + GeradorMenu.getDataCadastro());
             System.out.println("===================== Menu " + this.titulo + " =====================");
             System.out.println("0) Sair");
             System.out.println("1) Voltar");
@@ -65,6 +66,10 @@ public class GeradorMenu {
 
     public void setInput(Scanner input) {
         this.input = input;
+    }
+
+    public static LocalDate getDataCadastro() {
+        return dataCadastro;
     }
 }
 

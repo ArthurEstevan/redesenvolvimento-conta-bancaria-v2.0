@@ -1,7 +1,7 @@
 package br.com.entra21.backend;
 
 import br.com.entra21.backend.menu.Chamadas;
-import java.time.LocalDate;
+import br.com.entra21.backend.menu.GeradorMenu;
 import java.util.*;
 
 public class Main {
@@ -13,6 +13,7 @@ public class Main {
         final byte TENTATIVA = 3;
         final byte ZERO = 0;
         byte opcao;
+
         Armazenar.inicializarBancoDados();
 
         do {
@@ -36,8 +37,7 @@ public class Main {
     }
 
     public static void menu() {
-        LocalDate amostra = LocalDate.now();
-        System.out.println("\nBem vindo - " + amostra);
+        System.out.println("\nBem vindo - " + GeradorMenu.getDataCadastro());
         System.out.println("==========================================");
         ArrayList<String> opcao = new ArrayList<>(Arrays.asList("0) Sair", "1) Entrar", "2) Cadastrar", "3) Alterar senha", "4) Sobre"));
         opcao.forEach(System.out::println);

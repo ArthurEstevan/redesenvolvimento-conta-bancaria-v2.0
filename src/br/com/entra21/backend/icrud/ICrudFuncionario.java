@@ -3,7 +3,6 @@ package br.com.entra21.backend.icrud;
 import br.com.entra21.backend.Armazenar;
 import br.com.entra21.backend.bd.Funcionario;
 import br.com.entra21.backend.menu.GeradorMenu;
-import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -31,7 +30,7 @@ public class ICrudFuncionario extends GeradorMenu implements ICrud<Funcionario> 
 
     @Override
     public void listar(HashMap<String, Funcionario> lista) {
-        System.out.println("\nBem vindo - " + dataCadastro);
+        System.out.println("\nBem vindo - " + GeradorMenu.getDataCadastro());
         System.out.println("==========================================");
         System.out.println("""
 
@@ -178,17 +177,13 @@ public class ICrudFuncionario extends GeradorMenu implements ICrud<Funcionario> 
         System.out.print("Informe o estado: ");
         formulario.setEstado(super.getInput().next());
 
-        System.out.print("Informe a conta-corrente: ");
-        formulario.setContaCorente(super.getInput().next());
-
         System.out.print("Informe o email: ");
         formulario.setEmail(super.getInput().next());
 
         System.out.print("Informe o telefone: ");
         formulario.setCelular(super.getInput().next());
 
-        formulario.setAgencia("3048");
-        formulario.setDataCadastro(dataCadastro);
+        formulario.setDataCadastro(GeradorMenu.getDataCadastro());
 
         return formulario;
     }
@@ -267,7 +262,7 @@ public class ICrudFuncionario extends GeradorMenu implements ICrud<Funcionario> 
         System.out.print("Informe o telefone: ");
         formulario.setCelular(super.getInput().next());
 
-        formulario.setDataCadastro(dataCadastro);
+        formulario.setDataCadastro(GeradorMenu.getDataCadastro());
 
         return formulario;
     }

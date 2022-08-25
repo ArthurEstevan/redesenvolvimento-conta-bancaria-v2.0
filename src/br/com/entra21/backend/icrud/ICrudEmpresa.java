@@ -30,7 +30,7 @@ public class ICrudEmpresa extends GeradorMenu implements ICrud<Empresa> {
 
     @Override
     public void listar(HashMap<String, Empresa> lista) {
-        System.out.println("\nBem vindo - " + dataCadastro);
+        System.out.println("\nBem vindo - " + GeradorMenu.getDataCadastro());
         System.out.println("==========================================");
         System.out.println("""
 

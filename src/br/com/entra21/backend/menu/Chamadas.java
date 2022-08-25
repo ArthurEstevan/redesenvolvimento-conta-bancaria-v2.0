@@ -5,7 +5,6 @@ import br.com.entra21.backend.bd.Funcionario;
 import br.com.entra21.backend.exceptions.FuncionarioExistenteException;
 import br.com.entra21.backend.exceptions.SenhaIncorretaException;
 import br.com.entra21.backend.icrud.ICrudFuncionario;
-import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -20,8 +19,7 @@ public class Chamadas {
         if (tentativa == 0) {
             System.out.println("Desculpe a informção está incorreta.");
         } else {
-            LocalDate amostra = LocalDate.now();
-            System.out.println("\nBem vindo - " + amostra + " - 3/" + tentativa);
+            System.out.println("\nBem vindo - " + GeradorMenu.getDataCadastro() + " - 3/" + tentativa);
             System.out.println("==========================================");
         }
 
@@ -83,8 +81,7 @@ public class Chamadas {
             System.out.println("Desculpe a informção está incorreta.");
             return;
         } else {
-            LocalDate amostra = LocalDate.now();
-            System.out.println("\nBem vindo - " + amostra + " - 3/" + tentativa);
+            System.out.println("\nBem vindo - " + GeradorMenu.getDataCadastro() + " - 3/" + tentativa);
             System.out.println("==========================================");
         }
         try {
@@ -138,8 +135,7 @@ public class Chamadas {
             System.out.println("Desculpe a informção está incorreta.");
             return;
         } else {
-            LocalDate amostra = LocalDate.now();
-            System.out.println("\nBem vindo - " + amostra + " - 3/" + tentativa);
+            System.out.println("\nBem vindo - " + GeradorMenu.getDataCadastro() + " - 3/" + tentativa);
             System.out.println("==========================================");
         }
         try {

@@ -42,6 +42,7 @@ public class ClienteMenu extends GeradorMenu implements Operacoes {
 
     @Override
     public void deposito(double pValor) {
+        System.out.println("\nBem vindo - " + GeradorMenu.getDataCadastro());
         System.out.println("========================================");
         System.out.println("Realizar Deposito ");
         System.out.println("========================================");
@@ -51,20 +52,25 @@ public class ClienteMenu extends GeradorMenu implements Operacoes {
 
         System.out.println("Salado posterior: " + this.cliente.getSaldo());
         System.out.println("========================================");
-        System.out.println("-operacao realizada com sucesso-");
+        System.out.println("operacao realizada com sucesso");
     }
 
     @Override
     public void sacar(double pValor) {
+        System.out.println("\nBem vindo - " + GeradorMenu.getDataCadastro());
         System.out.println("========================================");
         System.out.println("Realizar Saque");
         System.out.println("========================================");
         System.out.printf("Saldo anterior: " + this.cliente.getSaldo() + "\n");
+
         if (this.cliente.getSaldo() > pValor) {
+
             this.cliente.setSaldo((this.cliente.getSaldo() - pValor));
+
             System.out.print("Saldo posterior: " + this.cliente.getSaldo() + "\n");
             System.out.println("========================================");
-            System.out.print("-operacao realizada com sucesso-\n");
+            System.out.print("operacao realizada com sucesso\n");
+
         } else {
             System.out.print("-saldo insuficiente-\n");
         }
@@ -72,27 +78,36 @@ public class ClienteMenu extends GeradorMenu implements Operacoes {
 
     @Override
     public void transferencia(double pValor) {
+        System.out.println("\nBem vindo - " + GeradorMenu.getDataCadastro());
         System.out.println("========================================");
-        System.out.println("Realizar Transferencia");
+        System.out.println("Realizar Transferência");
+        System.out.println("========================================");
 
         Cliente informacoes = new ICrudCliente().capturarChave();
 
-        if (pValor <= this.cliente.getSaldo()) {
+        if (this.cliente.getSaldo() >= pValor) {
 
             if (informacoes.getCpf() != null) {
+
                 this.cliente.setSaldo((this.cliente.getSaldo() - pValor));
                 Armazenar.clientes.get(informacoes.getCpf()).setSaldo(Armazenar.clientes.get(informacoes.getCpf()).getSaldo() + pValor);
-                System.out.print("-transferencia realizada com sucesso-\n");
+                System.out.print("transferencia realizada com sucesso\n");
+
             } else {
-                System.out.print("-cliente informado não encontrado-");
+
+                System.out.print("cliente informado não encontrado");
+
             }
         } else {
-            System.out.print("-saldo insuficiente-");
+
+            System.out.print("saldo insuficiente");
+
         }
     }
 
     @Override
     public void investimento() {
+        System.out.println("\nBem vindo - " + GeradorMenu.getDataCadastro());
         System.out.println("========================================");
         System.out.println("Realizar Investimento ");
         System.out.println("========================================");
@@ -124,7 +139,6 @@ public class ClienteMenu extends GeradorMenu implements Operacoes {
                 } else {
                     System.out.println("Desculpe a informção está incorreta.");
                 }
-
             }
             case "TESOURO_SELIC" -> {
                 if (pValorMs >= Investimento.TESOURO_SELIC.getPrecoUnitario()) {
@@ -136,7 +150,6 @@ public class ClienteMenu extends GeradorMenu implements Operacoes {
                 } else {
                     System.out.println("Desculpe a informção está incorreta.");
                 }
-
             }
             case "TESOURO_PREFIXADO" -> {
                 if (pValorMs >= Investimento.TESOURO_PREFIXADO.getPrecoUnitario()) {
@@ -154,6 +167,7 @@ public class ClienteMenu extends GeradorMenu implements Operacoes {
 
     @Override
     public void saldo() {
+        System.out.println("\nBem vindo - " + GeradorMenu.getDataCadastro());
         System.out.println("========================================");
         System.out.println("Saldo do Cliente");
         System.out.println("========================================");
