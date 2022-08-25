@@ -128,7 +128,7 @@ public class Chamadas {
         System.out.println("- Versão: GreenBank v2.0");
         System.out.println("- Linguagem: Português");
 
-        System.out.println("============================================");
+        System.out.println("==================================================================================================================");
     }
 
     // =========================== Recuperação de senha =========================== //
@@ -150,7 +150,7 @@ public class Chamadas {
             funcionario.setSenha(funcionario.getDataCadastro().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")));
             Armazenar.funcionarios.put(funcionario.getCpf(), funcionario);
 
-            System.out.println("A senha foi atualizada com a data de admissao no formato dd/MM/YYYY:");
+            System.out.println("A senha foi atualizada com a data de cadastro no formato dd/MM/yyyy:");
             System.out.println("Funcionário atualizado, por favor realize o login:");
 
             System.out.println("==============================================");

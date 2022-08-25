@@ -5,11 +5,10 @@ import java.util.ArrayList;
 
 public class Funcionario extends Pessoa {
 
-    // =========================== ATRIBUTOS =========================== //
+    // =========================== Atributos =========================== //
     private String senha;
-    // =========================== ATRIBUTOS =========================== //
 
-    // =========================== CONSTRUTORES =========================== //
+    // =========================== Construtores =========================== //
     public Funcionario() {
     }
 
@@ -31,9 +30,7 @@ public class Funcionario extends Pessoa {
         this.senha = senha;
     }
 
-    // =========================== CONSTRUTORES =========================== //
-
-    // =========================== GETTER end SETTER =========================== //
+    // =========================== Getters and Setters =========================== //
     public String getSenha() {
         return senha;
     }
@@ -41,5 +38,4 @@ public class Funcionario extends Pessoa {
     public void setSenha(String senha) {
         this.senha = senha;
     }
-    // =========================== GETTER end SETTER =========================== //
 }

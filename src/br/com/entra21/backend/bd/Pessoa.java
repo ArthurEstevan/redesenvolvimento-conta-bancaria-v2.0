@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class Pessoa {
 
-    // =========================== ATRIBUTOS =========================== //
+    // =========================== Atributos =========================== //
     private String nome;
     private byte idade;
     private String cpf;
@@ -28,9 +28,7 @@ public class Pessoa {
     private ArrayList<String> reclamacoes;
     private LocalDate dataCadastro;
 
-    // =========================== ATRIBUTOS =========================== //
-
-    // =========================== CONSTRUTORES =========================== //
+    // =========================== Construtores =========================== //
     public Pessoa() {
         super();
     }
@@ -56,7 +54,7 @@ public class Pessoa {
         this.dataCadastro = LocalDate.now();
     }
 
-    // =========================== cliente =========================== //
+    // =========================== Construtor de Cliente =========================== //
     public Pessoa(String nome, byte idade, String cpf, String rg, String dataNascimento, String sexo, String mae, String pai, String cep, String endereco, String numero, String bairro, String cidade, String estado, String celular, String contaCorente, String agencia, String email, ArrayList<String> reclamacoes) {
         this.nome = nome;
         this.idade = idade;
@@ -79,9 +77,8 @@ public class Pessoa {
         this.reclamacoes = reclamacoes;
         this.dataCadastro = LocalDate.now();
     }
-    // =========================== cliente =========================== //
 
-    // =========================== funcionario =========================== //
+    // =========================== Construtor de Funcionario =========================== //
     public Pessoa(String nome, byte idade, String cpf, String rg, String dataNascimento, String sexo, String mae, String pai, String cep, String endereco, String numero, String bairro, String cidade, String estado, String celular, String email, ArrayList<String> reclamacoes, LocalDate dataCadastro) {
         this.nome = nome;
         this.idade = idade;
@@ -102,11 +99,8 @@ public class Pessoa {
         this.reclamacoes = reclamacoes;
         this.dataCadastro = dataCadastro;
     }
-    // =========================== funcionario =========================== //
 
-    // =========================== CONSTRUTORES =========================== //
-
-    // =========================== GETTER =========================== //
+    // =========================== Getters =========================== //
     public String getNome() {
         return nome;
     }
@@ -274,23 +268,22 @@ public class Pessoa {
         return
                 '\n' + "Dados pessoais" + '\n' +
 
-                        '\n' + "| " + "Nome: " + nome + "   " + "Sexo: " + sexo + "   " + "Data de nascimento: " + dataNascimento + "   " + "Idade: " + idade + '\n' +
+                        '\n' + "| " + "Nome: " + getNome() + "   " + "Sexo: " + getSexo() + "   " + "Data de nascimento: " + getDataNascimento() + "   " + "Idade: " + getIdade() + '\n' +
 
-                        "| " + "CEP: " + cep + "   " + "CPF: " + cpf + "   " + "RG: " + rg + '\n' +
+                        "| " + "CEP: " + getCep() + "   " + "CPF: " + getCpf() + "   " + "RG: " + getRg() + '\n' +
 
-                        "| " + "Mãe: " + mae + "   " + "Pai: " + pai + '\n' +
+                        "| " + "Mãe: " + getMae() + "   " + "Pai: " + getPai() + '\n' +
 
-                        "| " + "Celular: " + celular + "   " + "Email: " + email + '\n' +
+                        "| " + "Celular: " + getCelular() + "   " + "Email: " + getEmail() + '\n' +
 
-                        "| " + "Conta-Corente: " + contaCorente + "   " + "Agência: " + agencia + "   " + "Data de cadastro: " + dataCadastro + '\n' +
+                        "| " + "Conta-Corente: " + getContaCorente() + "   " + "Agência: " + getAgencia() + "   " + "Data de cadastro: " + getDataCadastro() + '\n' +
 
-                        "| " + "Reclamacoes=" + reclamacoes + '\n' +
+                        "| " + "Reclamacoes=" + getReclamacoes() + '\n' +
 
                         '\n' + "Local de nascimento" + '\n' +
 
-                        '\n' + "| " + "Estado: " + estado + "   " + "Cidade: " + cidade + '\n' +
+                        '\n' + "| " + "Estado: " + getEstado() + "   " + "Cidade: " + getCidade() + '\n' +
 
-                        "| " + "Endereço: " + endereco + "   " + "Número: " + numero + "   " + "Bairro: " + bairro;
+                        "| " + "Endereço: " + getEndereco() + "   " + "Número: " + getNumero() + "   " + "Bairro: " + getBairro();
     }
-    // =========================== toString =========================== //
 }

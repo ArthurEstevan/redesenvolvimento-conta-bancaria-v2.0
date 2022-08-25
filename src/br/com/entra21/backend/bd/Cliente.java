@@ -1,12 +1,10 @@
 package br.com.entra21.backend.bd;
 
-
 import java.util.ArrayList;
 
 public class Cliente extends Pessoa {
 
-    // =========================== CONSTRUTORES =========================== //
-
+    // =========================== Construtores =========================== //
     private double saldo;
 
     public Cliente() {
@@ -33,9 +31,8 @@ public class Cliente extends Pessoa {
         super(nome, idade, cpf, rg, dataNascimento, sexo, mae, pai, cep, endereco, numero, bairro, cidade, estado, celular, contaCorente, agencia, email, reclamacoes);
         this.saldo = saldo;
     }
-    // =========================== CONSTRUTORES =========================== //
 
-    // =========================== GETTERS AND SETTERS =========================== //
+    // =========================== Getters and Setters =========================== //
     public double getSaldo() {
         return saldo;
     }

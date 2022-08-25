@@ -1,10 +1,13 @@
 package br.com.entra21.backend.icrud;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 
 public interface ICrud<T> {
+
+    LocalDate dataCadastro = LocalDate.now();
 
     ArrayList<String> opcoes = new ArrayList<>(Arrays.asList("Listar", "Adicionar", "Buscar", "Editar", "Deletar"));
 

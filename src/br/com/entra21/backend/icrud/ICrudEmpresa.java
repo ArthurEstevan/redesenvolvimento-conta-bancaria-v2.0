@@ -4,7 +4,6 @@ import br.com.entra21.backend.Armazenar;
 import br.com.entra21.backend.bd.Cliente;
 import br.com.entra21.backend.bd.Empresa;
 import br.com.entra21.backend.menu.GeradorMenu;
-import java.time.LocalDate;
 import java.util.HashMap;
 
 public class ICrudEmpresa extends GeradorMenu implements ICrud<Empresa> {
@@ -31,8 +30,7 @@ public class ICrudEmpresa extends GeradorMenu implements ICrud<Empresa> {
 
     @Override
     public void listar(HashMap<String, Empresa> lista) {
-        LocalDate amostra = LocalDate.now();
-        System.out.println("\nBem vindo - " + amostra);
+        System.out.println("\nBem vindo - " + dataCadastro);
         System.out.println("==========================================");
         System.out.println("""
 
@@ -43,7 +41,7 @@ public class ICrudEmpresa extends GeradorMenu implements ICrud<Empresa> {
                     "| " + "Nome: " + empresa.getDono().getNome() + "   " + "Sexo: " + empresa.getDono().getSexo() + "   " + "Data de nascimento: " + empresa.getDono().getDataNascimento() + "   " + "Idade: " + empresa.getDono().getIdade() + '\n' +
 
                             "| " + "Celular: " + empresa.getDono().getCelular() + "   " + "Email: " + empresa.getDono().getEmail() + "   " + "CPF: " + empresa.getDono().getCpf() + "   " + "Razão social: " + empresa.getRazapSocial() + '\n' +
-                    "----------------------------------------------------------------------------------------------"
+                    "------------------------------------------------------------------------------------------------------------------------"
             );
         }
     }
@@ -105,7 +103,7 @@ public class ICrudEmpresa extends GeradorMenu implements ICrud<Empresa> {
                 Dados pessoais
                 """);
         for (Empresa empresa : Armazenar.empresas.values()) {
-            System.out.println("| " + "Nome: " + empresa.getDono().getNome() + "   " + "CPF: " + empresa.getDono().getCpf() + '\n');
+            System.out.println("| " + "Nome: " + empresa.getDono().getNome() + "   " + "CPF: " + empresa.getDono().getCpf());
         }
 
         Cliente cliente = new Cliente();

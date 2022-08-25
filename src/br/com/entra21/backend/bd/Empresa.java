@@ -2,7 +2,7 @@ package br.com.entra21.backend.bd;
 
 public class Empresa {
 
-    // =========================== ATRIBUTOS and CONSTRUTORES =========================== //
+    // =========================== Atributos and Construtores =========================== //
     private Cliente dono;
     private String razapSocial;
     private String cnpj;
@@ -15,9 +15,8 @@ public class Empresa {
         this.razapSocial = razapSocial;
         this.dono = dono;
     }
-    // =========================== ATRIBUTOS and CONSTRUTORES =========================== //
 
-    // =========================== GETTER and SETTER =========================== //
+    // =========================== Getters and Setters =========================== //
     public Cliente getDono() {
         return dono;
     }
@@ -37,7 +36,6 @@ public class Empresa {
     public void setRazapSocial(String razapSocial) {
         this.razapSocial = razapSocial;
     }
-    // =========================== GETTER and SETTER =========================== //
 
     // =========================== toString =========================== //
     @Override
@@ -67,5 +65,4 @@ public class Empresa {
 
                         '\n' + "| " + "Razão social: " + razapSocial + "   " + "CNPJ: " + cnpj;
     }
-    // =========================== toString =========================== //
 }

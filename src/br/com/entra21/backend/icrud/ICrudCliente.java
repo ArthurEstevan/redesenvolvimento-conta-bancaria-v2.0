@@ -32,8 +32,7 @@ public class ICrudCliente extends GeradorMenu implements ICrud<Cliente> {
 
     @Override
     public void listar(HashMap<String, Cliente> lista) {
-        LocalDate amostra = LocalDate.now();
-        System.out.println("\nBem vindo - " + amostra);
+        System.out.println("\nBem vindo - " + dataCadastro);
         System.out.println("==========================================");
         System.out.println("""
 
@@ -44,7 +43,7 @@ public class ICrudCliente extends GeradorMenu implements ICrud<Cliente> {
                     "| " + "Nome: " + cliente.getNome() + "   " + "Sexo: " + cliente.getSexo() + "   " + "Data de nascimento: " + cliente.getDataNascimento() + "   " + "Idade: " + cliente.getIdade() + '\n' +
 
                             "| " + "Celular: " + cliente.getCelular() + "   " + "Email: " + cliente.getEmail() + "   " + "CPF: " + cliente.getCpf() + '\n' +
-                            "----------------------------------------------------------------------------------------------"
+                            "--------------------------------------------------------------------------------------------------------"
             );
         }
     }
@@ -101,8 +100,7 @@ public class ICrudCliente extends GeradorMenu implements ICrud<Cliente> {
                 Dados pessoais
                 """);
         for (Cliente cliente : Armazenar.clientes.values()) {
-            System.out.println("| " + "Nome: " + cliente.getNome() + "   " + "CPF: " + cliente.getCpf() + '\n' +
-                               "----------------------------------------------------------------------------------------------");
+            System.out.println("| " + "Nome: " + cliente.getNome() + "   " + "CPF: " + cliente.getCpf());
         }
 
         Cliente formulario = new Cliente();
@@ -121,8 +119,7 @@ public class ICrudCliente extends GeradorMenu implements ICrud<Cliente> {
         byte opcao = 120;
         String numero;
 
-        LocalDate amostra = LocalDate.now();
-        System.out.println("\nBem vindo - " + amostra);
+        System.out.println("\nBem vindo - " + dataCadastro);
         System.out.println("==========================================");
 
         System.out.print("Informe o nome: ");
@@ -167,7 +164,7 @@ public class ICrudCliente extends GeradorMenu implements ICrud<Cliente> {
         System.out.print("Informe o endereço: ");
         formulario.setEndereco(super.getInput().next());
 
-        System.out.print("Informe o numero: ");
+        System.out.print("Informe o número: ");
         formulario.setNumero(super.getInput().next());
 
         System.out.print("Informe o bairro: ");
@@ -185,9 +182,12 @@ public class ICrudCliente extends GeradorMenu implements ICrud<Cliente> {
         System.out.print("Informe o email: ");
         formulario.setEmail(super.getInput().next());
 
+        System.out.print("Informe o telefone: ");
+        formulario.setCelular(super.getInput().next());
+
         formulario.setAgencia("3048");
 
-        formulario.setDataCadastro(amostra);
+        formulario.setDataCadastro(dataCadastro);
         return formulario;
     }
 
@@ -204,12 +204,11 @@ public class ICrudCliente extends GeradorMenu implements ICrud<Cliente> {
 
         byte opcao = 120;
 
-        LocalDate amostra = LocalDate.now();
-        System.out.println("\nBem vindo - " + amostra);
+        System.out.println("\nBem vindo - " + dataCadastro);
         System.out.println("==========================================");
 
         System.out.print("Informe o nome: ");
-        formulario.setNome(getInput().nextLine());
+        formulario.setNome(getInput().next());
 
         do {
             try {
@@ -221,8 +220,52 @@ public class ICrudCliente extends GeradorMenu implements ICrud<Cliente> {
             }
         } while (opcao >= 118 || opcao <= 0);
         formulario.setIdade(opcao);
-        formulario.setDataCadastro(amostra);
 
+        System.out.print("Informe o RG: ");
+        formulario.setRg(super.getInput().next());
+
+        System.out.print("Informe a data de nascimento: ");
+        formulario.setDataNascimento(getInput().next());
+
+        System.out.print("Informe o sexo: ");
+        formulario.setSexo(super.getInput().next());
+
+        System.out.print("Informe o nome da mãe: ");
+        formulario.setMae(super.getInput().next());
+
+        System.out.print("Informe o nome do pai: ");
+        formulario.setPai(super.getInput().next());
+
+        System.out.print("Informe o CEP: ");
+        formulario.setCep(super.getInput().next());
+
+        System.out.print("Informe o endereço: ");
+        formulario.setEndereco(super.getInput().next());
+
+        System.out.print("Informe o número: ");
+        formulario.setNumero(super.getInput().next());
+
+        System.out.print("Informe o bairro: ");
+        formulario.setBairro(super.getInput().next());
+
+        System.out.print("Informe a cidade: ");
+        formulario.setCidade(super.getInput().next());
+
+        System.out.print("Informe o estado: ");
+        formulario.setEstado(super.getInput().next());
+
+        System.out.print("Informe a conta-corrente: ");
+        formulario.setContaCorente(super.getInput().next());
+
+        System.out.print("Informe o email: ");
+        formulario.setEmail(super.getInput().next());
+
+        System.out.print("Informe o telefone: ");
+        formulario.setCelular(super.getInput().next());
+
+        formulario.setAgencia("3048");
+
+        formulario.setDataCadastro(dataCadastro);
         return formulario;
     }
 }
