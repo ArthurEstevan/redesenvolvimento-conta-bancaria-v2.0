@@ -165,6 +165,8 @@ Banking System, where we have the features of a bank such as: account registrati
 ---
 ## ![](/Icons/redes-sociais.png) Social Network
 
+You can feel free to contact me, I will be available to help with questions about the project. I hope you can do it, after all for those who are starting in JAVA it is a great project.
+
 <p align="center"> 
 <br/>
 <a href="https://twitter.com/ArthurEstevanV1"> <img width="50px" src="https://user-images.githubusercontent.com/43545812/144034996-602b144a-16e1-41cc-99e7-c6040b20dcaf.png"/> </a>
