@@ -146,6 +146,8 @@ Banking System, where we have the features of a bank such as: account registrati
 
 <br>
 
+obs: I put it in vector because it's better to see it on the web, also when downloading it doesn't affect the resolution.
+
 ---
 
 ## ![](/Icons/arquivos-de-imagem.png) Design Flowchart
